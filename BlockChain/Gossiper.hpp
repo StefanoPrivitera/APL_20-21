@@ -41,7 +41,7 @@ public:
     int Gossip();
     void Client(const string& blockChain);
     static Gossiper *getInstance(int* Port=NULL ,int* serverPort=NULL);
-    static Gossiper *getInstanceExisting();
+
     virtual void update(const string& setNodes) override;
     string toJson();
     
