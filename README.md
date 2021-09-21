@@ -50,7 +50,7 @@ Uso:<br>
 
 Uso:<br>
 	&emsp;-Spostarsi nella cartella “Stats”<br>
-		Rscript script.R “numero porta es. 9999 passato da argv”
+		Rscript script.R “numero porta es. 9999 passato da argv”, mentre core c++ è in run 
 	
 &emsp;-es. 
 	
