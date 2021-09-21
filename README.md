@@ -56,4 +56,4 @@ Uso:<br>
 	
 	Rscript script.R 9999 
 	 
-	
+&emsp; Attendere qualche secondo
