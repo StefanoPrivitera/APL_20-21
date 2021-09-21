@@ -54,6 +54,6 @@ Uso:<br>
 	
 &emsp;-es. 
 	
-	#Rscript script.R 9999 
+	Rscript script.R 9999 
 	 
 	
