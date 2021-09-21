@@ -5,7 +5,7 @@
 #include "json.hpp"
 using json = nlohmann::json;
 using namespace std;
-Blocco::Blocco(int id, string cHash, string pHash, int nonce, string difficulty, long int timestamp)
+Blocco::Blocco(int id, string cHash, string pHash, int nonce, string difficulty, long int timestamp,int node,string file)
 {
     this->id = id;                 //id del blocco
     this->cHash = cHash;           //hash del blocco corrente
@@ -13,25 +13,6 @@ Blocco::Blocco(int id, string cHash, string pHash, int nonce, string difficulty,
     this->nonce = nonce;           //nonce (al fine di risolvere il blocco provo diversi nonce)
     this->difficulty = difficulty; //difficoltà utile per mantenere il tempo medio di un blocco a 15 secondi
     this->timestamp = timestamp;   //timestamp
-}
-Blocco::Blocco(int id, string cHash, string pHash, int nonce, string difficulty, long int timestamp, int node)
-{
-    this->id = id;
-    this->cHash = cHash;
-    this->pHash = pHash;
-    this->nonce = nonce;
-    this->difficulty = difficulty;
-    this->timestamp = timestamp;
-    this->node = node; //nodo che risolve il blocco
-}
-Blocco::Blocco(int id, string cHash, string pHash, int nonce, string difficulty, long int timestamp, int node, string file)
-{
-    this->id = id;
-    this->cHash = cHash;
-    this->pHash = pHash;
-    this->nonce = nonce;
-    this->difficulty = difficulty;
-    this->timestamp = timestamp;
     this->node = node;
     this->files = file;
 }

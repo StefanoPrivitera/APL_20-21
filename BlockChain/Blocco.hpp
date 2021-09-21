@@ -19,9 +19,7 @@ private:
     string fileToJson();
 
 public:
-    Blocco(int id, string cHash, string pHash, int nonce, string difficulty, long int timestamp);
-    Blocco(int id, string cHash, string pHash, int nonce, string difficulty, long int timestamp, int node);
-    Blocco(int id, string cHash, string pHash, int nonce, string difficulty, long int timestamp, int node, string file);
+    Blocco(int id, string cHash, string pHash, int nonce, string difficulty, long int timestamp,int node=0,string file="");
     Blocco();
     string toString() const;
     string toJson() const;
