@@ -41,7 +41,7 @@ Uso:<br>
 Prerequisiti:<br>
 	&emsp;-Installare Tkinter per Python3<br> 
 Uso:<br>
-	&emsp;-Spostarsi nella cartella “DnsHandler”<br> mentre core c++ è in run
+	&emsp;-Spostarsi nella cartella “DnsHandler”, mentre core c++ è in run<br>
 
 	python3 parser.py 
 <br>
