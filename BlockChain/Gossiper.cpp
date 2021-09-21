@@ -21,13 +21,13 @@ Gossiper *Gossiper::getInstance(int* valuePort, int* serverPort) //pattern singl
   return instance;
 }
 
-Gossiper *Gossiper::getInstanceExisting() //pattern singleton 
-{
-  if(instance == 0){
-    return NULL;
-  }
-  return instance;
-}
+// Gossiper *Gossiper::getInstanceExisting() //pattern singleton 
+// {
+//   if(instance == 0){
+//     return NULL;
+//   }
+//   return instance;
+// }
 
 
 

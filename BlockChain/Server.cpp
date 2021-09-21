@@ -119,7 +119,7 @@ void Server::Handle(const int *_connection) //gestisce la connessione
   }
   if(scelta == 3)// il cliente vuole la lista dei nodi attivi
   {
-    string json = Gossiper::getInstanceExisting()->toJson();
+    string json = Gossiper::getInstance()->toJson();
     char data[json.length() + 1];
     strcpy(data, json.c_str());
     send(*_connection, data, json.length() + 1, 0); //inviamo la lista dei nodi al client python 
