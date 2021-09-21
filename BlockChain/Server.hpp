@@ -16,11 +16,11 @@ private:
     std::vector<Observer *> observers;
 
 public:
-    Server(int valuePort);
+    Server(int* valuePort);
     void Bind();
     ~Server();
     void Handle(const int *connection);
-    static Server *getInstance(int port);
+    static Server *getInstance(int* port);
     void registerObserver(Observer *observer) override;
     void notifyObservers(string,int) override;
 };

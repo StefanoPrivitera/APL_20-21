@@ -21,9 +21,9 @@
 using namespace std;
 #define myIP "127.0.0.1"
 Server *Server::instance = 0;
-Server::Server(int valuePort)
+Server::Server(int* valuePort)
 {
-  this->port = valuePort; 
+  this->port = *valuePort; 
   std::thread th1([this] { this->Bind(); }); //creo un thread che si occupa di hostare il server
   th1.detach();
 }
@@ -31,7 +31,7 @@ Server::~Server()
 {
 }
 
-Server *Server::getInstance(int port)
+Server *Server::getInstance(int* port)
 {
   if (instance == 0)
   {
@@ -133,7 +133,7 @@ void Server::Handle(const int *_connection) //gestisce la connessione
   }
   else // il client vuole l'intera blockchain per controllare le stringhe customizzate
   {
-    string json = BlockChain::getInstance(this->port)->toJson();
+    string json = BlockChain::getInstance(&this->port)->toJson();
      
     char data[json.length() + 1];
     strcpy(data, json.c_str());

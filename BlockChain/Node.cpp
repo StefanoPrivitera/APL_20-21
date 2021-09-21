@@ -4,7 +4,7 @@ Node::~Node()
 {
 }
 
-Node::Node(int portServer, int portClient) 
+Node::Node(int* portServer, int* portClient) 
 {
   this->bc = BlockChain::getInstance(portServer); //signleton
   this->s = Server::getInstance(portServer); //singleton
@@ -21,7 +21,7 @@ Node::Node(int portServer, int portClient)
     Blocco *b = this->bc->Mine(); // esco sia se il blocco l'ho minato io, sia se l'ha minato qualcun'altro  
     if (b->cHash != "") //controllo se il blocco è stato risolto da node corrente o da altri nodi
       {
-      b->node=portServer;
+      b->node=*portServer;
       this->bc->AddBlock(b); //aggiungiamo il blocco alla lista se l'ha risolto il nodo corrente 
       this->g->Client(this->bc->toJson()); // viene inviata agli altri nodi la blockchain aggiornata
     }

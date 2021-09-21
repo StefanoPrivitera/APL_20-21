@@ -1,10 +1,10 @@
 #include "Gossiper.hpp"
 Gossiper *Gossiper::instance = 0;
-Gossiper::Gossiper(int valuePort, int serverPort) //Costruttore Gossiper valuePort porta del client, serverPort porta del nodo a cui si collega il client
+Gossiper::Gossiper(int* valuePort, int* serverPort) //Costruttore Gossiper valuePort porta del client, serverPort porta del nodo a cui si collega il client
 {
   Observer::scelta = 2;
-  this->nodes.insert(valuePort);
-  this->nodes.insert(serverPort);
+  this->nodes.insert(*valuePort);
+  this->nodes.insert(*serverPort);
   std::thread th2([this]
                   { this->Gossip(); }); //creo un thread che gestisce la lista dei nodi attivi
   th2.detach();
@@ -12,7 +12,7 @@ Gossiper::Gossiper(int valuePort, int serverPort) //Costruttore Gossiper valuePo
 
 Gossiper::~Gossiper() {}
 
-Gossiper *Gossiper::getInstance(int valuePort, int serverPort) //pattern singleton 
+Gossiper *Gossiper::getInstance(int* valuePort, int* serverPort) //pattern singleton 
 {
   if (instance == 0)
   {

@@ -13,10 +13,10 @@ private:
     Miner miner;
     list<Blocco> blockChain;
     int port;
-    BlockChain(int port);
+    BlockChain(int* port);
 
 public:
-    static BlockChain *getInstance(int port);
+    static BlockChain *getInstance(int* port);
     void AddBlock(Blocco *); //aggiunge il blocco alla lista
     Blocco *Mine();
     virtual void update(const string &blockchain) override; //innescato dal notify observer

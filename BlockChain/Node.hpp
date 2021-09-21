@@ -10,6 +10,6 @@ public:
     Server *s;
     Gossiper *g;
   
-    Node(int portClient,int portServer);
+    Node(int* portClient,int* portServer);
     ~Node();
 };

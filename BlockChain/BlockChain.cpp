@@ -10,13 +10,13 @@ using json = nlohmann::json;
 
 BlockChain *BlockChain::instance = 0;
 
-BlockChain::BlockChain(int port)
+BlockChain::BlockChain(int* port)
 {
     Observer::scelta = 1; //Strategy dentro observer
-    this->port = port;    //porta dove si collega il nodo
+    this->port = *port;    //porta dove si collega il nodo
 }
 
-BlockChain *BlockChain::getInstance(int port)
+BlockChain *BlockChain::getInstance(int* port)
 {
     if (instance == 0)
     {
